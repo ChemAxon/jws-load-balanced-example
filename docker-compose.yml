@@ -26,7 +26,7 @@ services:
   jws-discovery:
     build: .
     image: cxn/jws
-    command: sleep 2000 #/opt/chemaxon/jws/jws-discovery/run-jws-discovery
+    command: /opt/chemaxon/jws/jws-discovery/run-jws-discovery
     environment: 
       - "EUREKA_URI=http://jws-discovery:8761/"
       - "CONFIG_SERVER_URI=http://jws-config:8888/"
@@ -35,7 +35,7 @@ services:
   jws-db:
     build: .
     image: cxn/jws
-    command: sleep 2000 # /opt/chemaxon/jws/jws-db/run-jws-db
+    command: /opt/chemaxon/jws/jws-db/run-jws-db
     environment: 
       - "EUREKA_URI=http://jws-discovery:8761/"
       - "CONFIG_SERVER_URI=http://jws-config:8888/" 
@@ -54,10 +54,10 @@ services:
     ports:
       - "8080:8080"
     restart: unless-stopped
-  postgres:
-    image: postgres:11.4
-    environment:
-      - "POSTGRES_PASSWORD=chemaxon"
-      - "POSTGRES_USER=chemaxon"
-      - "POSTGRES_DB=zetor"
-      - "PGDATA=/var/lib/postgresql/data/pgdata_zetor"
+  #postgres:
+    #image: postgres:11.4
+    #environment:
+      #- "POSTGRES_PASSWORD=chemaxon"
+      #- "POSTGRES_USER=chemaxon"
+      #- "POSTGRES_DB=zetor"
+      #- "PGDATA=/var/lib/postgresql/data/pgdata_zetor"
