@@ -1,8 +1,3 @@
-# Install before run
-
-This little guide is based on https://github.com/tdi/vagrant-docker-swarm You can also consult
-that [README](https://github.com/tdi/vagrant-docker-swarm/blob/master/README.md) for 
-further infomration.
 
 ## Install:
 
@@ -16,6 +11,13 @@ further infomration.
 * copy a valid JWS license to `jws/license/license.cxl` (this is good for the purpose: [devlicense](http://devlicense.bpo.cxn/license.cxl)) 
 * download [Postgres JDBC driver](http://central.maven.org/maven2/org/postgresql/postgresql/42.2.5/postgresql-42.2.5.jar) and copy it to `jws/jws-db/jdbc-drivers/` folder
 * ensure a running docker swarm and run the following docker commands on the manager node.
+* ensure a running postgresql server and set its connection properties in `application.properties` file of the `jws-load-balanced-example` directory. Both the `com.chemaxon.zetor.settings.crdb` and the `com.chemaxon.zetor.additional.crdb` sections need to be set. 
+* Set the interface mask of the nodes running in the docker swarm in file `hazelcastDockerEureka.xml` in section 
+```
+    <interfaces enabled="true">
+      <interface>10.0.*.*</interface>
+    </interfaces>
+```
 
 
 # Execute
