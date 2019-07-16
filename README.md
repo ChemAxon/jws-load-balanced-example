@@ -40,6 +40,14 @@ This command will create a new service stack with name `demo` based on the docke
 * `docker stack ps <stack-name> --no-trunc` list all services in stack (identified by <stack-name>)
 * `docker stack rm <stack-name>` stops and removes all services in stack
 
+# Near cache config
+
+* use the relevant docker compose file: 
+
+    `docker stack deploy --compose-file docker-composeNearCache.yml demo`
+    
+* specify near cache option in the `hazelcastDockerEureka.xml` file.
+
 # Good to know
 
 You can not _just click through_ the demobecause the default table name `testExtendedTable`
