@@ -233,6 +233,12 @@
                         ALWAYS: Always cache deserialized values.
         -->
         <cache-deserialized-values>ALWAYS</cache-deserialized-values>
+        
+        <near-cache>
+            <invalidate-on-change>true</invalidate-on-change>
+            <in-memory-format>OBJECT</in-memory-format>
+            <cache-local-entries>true</cache-local-entries>
+        </near-cache>
 
     </map>
 

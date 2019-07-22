@@ -42,11 +42,11 @@ This command will create a new service stack with name `demo` based on the docke
 
 # Near cache config
 
+* Replace `Dockerfile` with `DockerfileNearCache` and re-build the docker images on the nodes.
 * use the relevant docker compose file: 
 
     `docker stack deploy --compose-file docker-composeNearCache.yml demo`
-    
-* specify near cache option in the `hazelcastDockerEureka.xml` file.
+
 
 # Good to know
 
