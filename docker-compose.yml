@@ -21,8 +21,6 @@ services:
     environment: 
       - "EUREKA_URI=http://jws-discovery:8761/"
       - "CONFIG_SERVER_URI=http://jws-config:8888/"
-    ports:
-      - "8888:8888"
   jws-discovery:
     build: .
     image: cxn/jws
@@ -30,8 +28,9 @@ services:
     environment: 
       - "EUREKA_URI=http://jws-discovery:8761/"
       - "CONFIG_SERVER_URI=http://jws-config:8888/"
-    ports:
-      - "8761:8761"
+# To monitor discovery service for tesing purposes uncomment:
+#    ports:
+#      - "8761:8761"
   jws-db:
     build: .
     image: cxn/jws
@@ -39,8 +38,6 @@ services:
     environment: 
       - "EUREKA_URI=http://jws-discovery:8761/"
       - "CONFIG_SERVER_URI=http://jws-config:8888/" 
-    ports:
-      - "8082:8062"
     deploy:
         mode: replicated
         replicas: 2
