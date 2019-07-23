@@ -7,7 +7,7 @@
 
 ## Setups before first run:
 
-* unzip a JWS tar.gz here (in the end you should have a `jws` folder with the whole application) (download one from here: [jcb-jws-repo](https://artifacts.chemaxon.com/artifactory/list/jchem-generic-snapshot-local/jws/) I have explicitly used: [19.17.0-10-10179](https://artifacts.chemaxon.com/artifactory/list/jchem-generic-snapshot-local/jws/jws-19.17.0-10179/jws_unix_19.17.tar.gz)) **This should be replaced by the released artifact**
+* unzip a JWS tar.gz here (in the end you should have a `jws` folder with the whole application) (download one from the product download site, preferably a version above 19.17.)
 * copy a valid JWS license to `jws/license/license.cxl` (this is good for the purpose: [devlicense](http://devlicense.bpo.cxn/license.cxl)) 
 * download [Postgres JDBC driver](http://central.maven.org/maven2/org/postgresql/postgresql/42.2.5/postgresql-42.2.5.jar) and copy it to `jws/jws-db/jdbc-drivers/` folder
 * ensure a running docker swarm and run the following docker commands on the manager node.
