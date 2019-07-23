@@ -41,6 +41,7 @@
     <management-center enabled="false">http://localhost:8080/hazelcast-mancenter</management-center>
     <properties>
         <property name="hazelcast.discovery.enabled">true</property>
+        <property name="hazelcast.logging.type">slf4j</property>
     </properties>
     <network>
         <port auto-increment="true" port-count="100">5701</port>
@@ -398,7 +399,4 @@
         </raft-algorithm>
     </cp-subsystem>
 
-    <properties>
-        <property name="hazelcast.logging.type">slf4j</property>
-    </properties>
 </hazelcast>
