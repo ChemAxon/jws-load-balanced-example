@@ -8,7 +8,7 @@
 ## Setups before first run:
 
 * unzip a JWS tar.gz here (in the end you should have a `jws` folder with the whole application) (download one from the product download site, preferably a version above 19.17.)
-* copy a valid JWS license to `jws/license/license.cxl` (this is good for the purpose: [devlicense](http://devlicense.bpo.cxn/license.cxl)) 
+* copy a valid JWS license to `jws/license/license.cxl`
 * download [Postgres JDBC driver](http://central.maven.org/maven2/org/postgresql/postgresql/42.2.5/postgresql-42.2.5.jar) and copy it to `jws/jws-db/jdbc-drivers/` folder
 * ensure a running docker swarm and run the following docker commands on the manager node.
 * ensure a running postgresql server and set its connection properties in `application.properties` file of the `jws-load-balanced-example` directory. Both the `com.chemaxon.zetor.settings.crdb` and the `com.chemaxon.zetor.additional.crdb` sections need to be set. 
@@ -50,16 +50,6 @@ This command will create a new service stack with name `demo` based on the docke
 
 # Good to know
 
-You can not _just click through_ the demobecause the default table name `testExtendedTable`
+You can not _just click through_ the demo because the default table name `testExtendedTable`
 is too long when it is in table names like `fingerprint_testExtendedTable_dot_sample_sorted_fpPage_hash_T_index`
-(names should be less than 64 characters). But __table name `alma` works__ fine.
-
-**Volumes are local by default** despite of anything I have claimed earlier. It is possible
-to install additional drivers for docker and create network attached storages and put docker 
-voulmes on them but I hade not enough time to figure them out in an automatic manner. But
-you can find more information [here](https://forums.docker.com/t/docker-swarm-nfs-mount/39007/5).
-This means that if something (like postgres) has it's data on a volume and we kill the machine
-that runs that container then data will be lost also. However, it is possible now to kill any worker
-because postgres container is fixed to manager which should not be killed anyway and jws containers
-are fixed to the three workers.
-
+(names should be less than 64 characters). But __table name `apple` works__ fine.
