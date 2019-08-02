@@ -49,8 +49,8 @@ Consequences:
 * Synchronization between nodes is slower. 
 * This has the effect that to keep jchem-db data consistent only one writer node is allowed, further jws-db nodes can only read the shared db.
 * Gateway has separate endpoints for reading and read-write operations:
-* * read: `jwsdbreadonly`
-* * read-write: `jwsdb`
+    * read: `jwsdbreadonly`
+    * read-write: `jwsdb`
 
 Near cache load-balanced example needs the following modifications in the above launch process:
 
