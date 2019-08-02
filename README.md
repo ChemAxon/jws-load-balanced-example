@@ -13,7 +13,7 @@ These steps must be executed on every node of the swarm or alternatively swarm r
 * copy a valid JWS license to `jws/license/license.cxl`
 * download [Postgres JDBC driver](http://central.maven.org/maven2/org/postgresql/postgresql/42.2.5/postgresql-42.2.5.jar) and copy it to `jws/jws-db/jdbc-drivers/` folder
 * ensure a running docker swarm and run the following docker commands on the manager node.
-* ensure a running postgresql server and set its connection properties in `application.properties` file of the `jws-load-balanced-example` directory. Section `com.chemaxon.zetor.settings.crdb`  needs to be set. 
+* ensure a running postgresql server and set its connection properties in `application.properties` file of the `jws-load-balanced-example` directory. Both the `com.chemaxon.zetor.settings.crdb` and the `com.chemaxon.zetor.additional.crdb` sections need to be set. 
 * Set the interface mask of the nodes running in the docker swarm in file `hazelcastDockerEureka.xml` in section 
 ```
     <interfaces enabled="true">
