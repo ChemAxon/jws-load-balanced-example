@@ -64,6 +64,4 @@ Near cache load-balanced example needs the following modifications in the above 
 
 # Good to know
 
-You can not _just click through_ the demo because the default table name `testExtendedTable`
-is too long when it is in table names like `fingerprint_testExtendedTable_dot_sample_sorted_fpPage_hash_T_index`
-(names should be less than 64 characters). But __table name `apple` works__ fine.
+Table names longer than 18 character cannot be created because internal tables are created based on this name and their name exceeds the 63 character limit in this case.
