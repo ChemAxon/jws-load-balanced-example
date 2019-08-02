@@ -7,7 +7,9 @@
 
 ## Setups before first run:
 
-* unzip a JWS tar.gz here (in the end you should have a `jws` folder with the whole application) (download one from the product download site, preferably a version above 19.17.)
+These steps must be executed on every node of the swarm or alternatively swarm registry can be used.
+
+* unzip a JWS tar.gz here (in the end you should have a `jws` folder with the whole application) (download one from the product download site, preferably a version at least 19.19.)
 * copy a valid JWS license to `jws/license/license.cxl`
 * download [Postgres JDBC driver](http://central.maven.org/maven2/org/postgresql/postgresql/42.2.5/postgresql-42.2.5.jar) and copy it to `jws/jws-db/jdbc-drivers/` folder
 * ensure a running docker swarm and run the following docker commands on the manager node.
