@@ -42,6 +42,18 @@ This command will create a new service stack with name `demo` based on the docke
 
 # Near cache config
 
+Setting hazelcast near cache option has the effect that read operations are faster due to faster hazelcast caching and caching the java objects instead of the serialized format. 
+
+Consequences:
+
+* Synchronization between nodes is slower. 
+* This has the effect that to keep jchem-db data consistent only one writer node is allowed, further jws-db nodes can only read the shared db.
+* Gateway has separate endpoints for reading and read-write operations:
+* * read: `jwsdbreadonly`
+* * read-write: `jwsdb`
+
+Near cache load-balanced example needs the following modifications in the above launch process:
+
 * Replace `Dockerfile` with `DockerfileNearCache` and re-build the docker images on the nodes.
 * use the relevant docker compose file: 
 
